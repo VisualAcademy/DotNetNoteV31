@@ -13,4 +13,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DotNetNote.Models\DotNetNote.Models.csproj" />
+  </ItemGroup>
+
 </Project>
