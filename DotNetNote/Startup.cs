@@ -410,10 +410,11 @@ namespace DotNetNote
             //services.AddTransient<ICompanyRepository, CompanyRepositoryEntityFramework>();
 
             // <Notifications>
-            // ----------------------------------------------------------------------------------------------------------------------------- // 
+            // ASP.NET Core 3.1과 jQuery 모달 팝업으로 특정 사용자에게 전송된 알림을 제공하는 초간단 알림 서비스 만들기
+            // ---------------------------------------------------------------------------------------------------------------------------------- // 
             // 종속성 해결: IMyNotificationRepository의 인스턴스를 MyNotificationRepository로 생성
-            services.AddSingleton<IMyNotificationRepository>(new MyNotificationRepository(Configuration["ConnectionString"]));
-            // ----------------------------------------------------------------------------------------------------------------------------- // 
+            services.AddSingleton<IMyNotificationRepository>(new MyNotificationRepository(Configuration["ConnectionStrings:DefaultConnection"]));
+            // ---------------------------------------------------------------------------------------------------------------------------------- // 
             // </Notifications>
 
             services.AddTransient<IUrlRepository, UrlRepository>();
