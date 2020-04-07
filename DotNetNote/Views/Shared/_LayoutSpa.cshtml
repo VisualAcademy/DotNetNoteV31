@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - AngularNote</title>
+        <base href="/" />
+        <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+
+        <link href="~/css/site.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/lib/toastr/toastr.min.css" rel="stylesheet" />
+        
+        @*Internet Explorer 11 ES6 지원 가능하도록 : 크롬과 엣지는 잘되는데 IE는 안된다면...*@
+        @*<script src="node_modules/core-js/client/shim.min.js"></script>*@
+        @*<script src="~/lib/es6-shim/es6-shim.js"></script>*@
+
+        @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
+        <script src="~/lib/toastr/toastr.min.js"></script>
+    </head>
+    <body>
+        @RenderBody()
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

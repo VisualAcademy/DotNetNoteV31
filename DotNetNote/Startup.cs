@@ -279,15 +279,9 @@ namespace DotNetNote
             //// 의존성 주입
             //services.AddTransient<ITwelveRepository, TwelveRepository>();
 
-            ////[DI] 의존성 주입(Dependency Injection)
-            //DependencyInjectionContainer(services);
-
+            //[DI] 의존성 주입(Dependency Injection)
+            DependencyInjectionContainer(services);
         }
-
-
-
-
-
 
         /// <summary>
         /// 의존성 주입 관련 코드만 따로 모아서 관리
@@ -422,14 +416,6 @@ namespace DotNetNote
 
             services.AddTransient<IUrlRepository, UrlRepository>();
         }
-
-
-
-
-
-
-
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,

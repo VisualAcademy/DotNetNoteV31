@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap3/css/bootstrap.css" rel="stylesheet" />
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/bootstrap3/js/bootstrap.js"></script>
+
+<h3>알림이 있으면 출력</h3>
+
+<input type="button" id="btnCheck" value="알림이 있는지 확인" />
+
+<input type="hidden" id="hdnUserId" value="@ViewBag.UserId" />
+
+<!-- Modal -->
+<div class="modal fade" id="myNotification" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">알림이 있습니다.</h4>
+            </div>
+            <div class="modal-body">
+                <a href="/MyNotification/MyPage">알림을 확인하시겠습니까?</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#btnCheck").click(function () {
+
+            var userId = parseInt($("#hdnUserId").val(), 10);
+
+            // Web API를 호출하여, 알림이 있는지 확인
+            $.get("/api/IsNotification?userId=" + userId)
+                .done(function (data) {
+                    if (data) {
+
+                        // 모달 폼 띄우기 
+                        $("#myNotification").modal(); 
+
+                    }
+                    else {
+
+                    }
+                });
+
+        });
+    });
+</script>
