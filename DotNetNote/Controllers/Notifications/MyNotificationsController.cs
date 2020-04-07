@@ -12,6 +12,7 @@ namespace DotNetNote.Controllers
             _repository = repository;
         }
 
+        #region MVC 액션 메서드
         public IActionResult Index()
         {
             return View();
@@ -19,7 +20,7 @@ namespace DotNetNote.Controllers
 
         public IActionResult MyNotification()
         {
-            ViewBag.UserId = 1; 
+            ViewBag.UserId = 1;
 
             return View();
         }
@@ -39,9 +40,11 @@ namespace DotNetNote.Controllers
 
             var noti = _repository.GetNotificationByUserid(userId);
 
-            return View(noti); 
-        }
+            return View(noti);
+        } 
+        #endregion
 
+        #region Web API
         [Route("api/IsNotification")]
         public bool IsNotification(int userId)
         {
@@ -52,7 +55,8 @@ namespace DotNetNote.Controllers
         public bool CompleteNotification(int userId)
         {
             _repository.CompleteNotificationByUserid(userId);
-            return true; 
-        }
+            return true;
+        } 
+        #endregion
     }
 }
