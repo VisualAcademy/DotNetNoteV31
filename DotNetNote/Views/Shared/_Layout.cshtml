@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - DotNetNote</title>
+    <title>@ViewData["Title"] - 닷넷노트</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -25,6 +25,71 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li>
+                            <a class="nav-link text-dark" href="/BuildSeoul">빌드서울</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="DotNetNote" asp-action="Index">게시판</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="WebCamp" asp-action="Index">웹캠프</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="CommunityCamp" asp-action="Index">커뮤니티캠프</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">정보</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">연락처</a>
+                        </li>
+
+                        <li class="dropdown nav-item">
+                            <a class="dropdown-toggle nav-link text-dark" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                예제
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" asp-controller="Urls" asp-action="Index">도메인 관리자</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="RouteDemo" asp-action="Index">특성 라우팅</a>
+                                <a class="dropdown-item" asp-controller="Data" asp-action="Index">MVC 주요 기능</a>
+                                <a class="dropdown-item" asp-controller="RazorDemo" asp-action="Demo1">Razor 구문 1</a>
+                                <a class="dropdown-item" asp-controller="RazorDemo" asp-action="Demo2">Razor 구문 2</a>
+                                <a class="dropdown-item" asp-controller="HelperMethodDemo" asp-action="Index">헬퍼 메서드</a>
+                                <a class="dropdown-item" asp-controller="Demo" asp-action="ViewWithModelDemo">모델 형식으로 전송된 데이터 받기</a>
+                                <a class="dropdown-item" asp-controller="Demo" asp-action="ViewWithListOfDemo">컬렉션 형태로 전송된 데이터 받기</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="FormValidationDemo" asp-action="Index">폼 유효성 검사</a>
+                                <a class="dropdown-item" asp-controller="TagHelperDemo" asp-action="Index">태그 헬퍼</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="SingletonDemo" asp-action="Index">Singleton Demo</a>
+                                <a class="dropdown-item" asp-controller="SingletonDemo" asp-action="ConstructorInjectionDemo">생성자 주입</a>
+                                <a class="dropdown-item" asp-controller="DependencyInjectionDemo" asp-action="Index">인터페이스를 사용한 생성자 주입으로 DI 구현하기</a>
+                                <a class="dropdown-item" asp-controller="DependencyInjectionDemo" asp-action="About">인터페이스를 사용한 생성자 주입으로 DI 구현하기</a>
+                                <a class="dropdown-item" asp-controller="DependencyInjectionDemo" asp-action="AtInjectDemo">@@inject 구문으로 뷰 페이지에 직접 주입하기</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="StronglyTypedConfiguration" asp-action="Index">강력한 형식의 환경 설정</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="LoggingDemo" asp-action="Index">로깅(Logging)</a>
+                                <a class="dropdown-item" asp-controller="ViewComponentDemo" asp-action="Index">뷰 컴포넌트</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="Tech" asp-action="Index">Web API - 기술 목록(with Angular)</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="~/Maxim/Default.html">명언 서비스</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="RecruitManager" asp-action="Index">모집 관리자</a>
+                            </div>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a class="dropdown-toggle nav-link text-dark" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                책
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" asp-controller="Guide" asp-action="Index">학습 가이드</a>
+                                <a class="dropdown-item" asp-controller="Errata" asp-action="Index">정오표</a>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
             </div>
