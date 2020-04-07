@@ -1,0 +1,14 @@
+{
+  "name": "core",
+  "version": "0.1.0",
+  "description": "Core Javascript",
+  "keywords": [
+    "core-js",
+    "framework",
+    "javascript"
+  ],
+  "main": "dist/core.min.js",
+  "license": "MIT",
+  "dependencies": {
+  }
+}

@@ -1,0 +1,60 @@
+﻿[!] one-to-nth 리팩터링
+
+: Angular CLI의 모듈, 컴포넌트, 서비스 등의 생성 규칙을 따르자. 
+
+- app/one-to-nth/one/
+	- app/components/OneComponent
+		- app/components/OneComponent/ConComponent.html
+		- app/components/OneComponent/ConComponent.ts
+- app/one-to-nth/two/
+- app/one-to-nth/three/
+- app/one-to-nth/four/
+- app/one-to-nth/five/
+
+[0] Angular CLI를 사용하여 임시 파일 생성용 AngularNote 프로젝트 생성
+	ng new AngularNote --routing 
+
+[1] one-to-nth 모듈 생성
+	ng g m one-to-nth --routing
+
+[2] one 모듈(컴포넌트, 서비스) 생성: 모듈은 one-to-nth 모듈 사용
+	ng g c one-to-nth/one -is --spec false
+	ng g s one-to-nth/one/one-data --spec false -m one-to-nth/one-to-nth.module
+
+[3] two 모듈(컴포넌트, 서비스) 생성: 모듈은 one-to-nth 모듈 사용
+	ng g c one-to-nth/two -is --spec false
+	ng g s one-to-nth/two/two-data --spec false -m one-to-nth/one-to-nth.module
+
+[4] three 모듈(컴포넌트, 서비스) 생성: 모듈은 one-to-nth 모듈 사용
+	ng g c one-to-nth/three -is --spec false
+	ng g s one-to-nth/three/three-data --spec false -m one-to-nth/one-to-nth.module
+	ng g class one-to-nth/three/three-model
+
+[5] four 모듈(컴포넌트, 서비스) 생성: 모듈은 one-to-nth 모듈 사용
+	ng g c one-to-nth/four -is --spec false
+	ng g s one-to-nth/four/four-data --spec false -m one-to-nth/one-to-nth.module
+	ng g class one-to-nth/four/four-model
+
+	ng g c one-to-nth/four/four-write --flat --spec false
+	ng g c one-to-nth/four/four-grid --flat --spec false
+	ng g c one-to-nth/four/four-detail --flat --spec false
+	ng g c one-to-nth/four/four-modify --flat --spec false
+	ng g c one-to-nth/four/four-delete --flat --spec false
+	ng g interface one-to-nth/four/index
+	ng g guard one-to-nth/four/four-detail --spec false -m one-to-nth/one-to-nth.module
+
+[6] five 모듈(컴포넌트, 서비스) 생성: 모듈은 one-to-nth 모듈 사용
+	ng g c one-to-nth/five -is --spec false
+		ng g c one-to-nth/five/five-index -is --spec --flat false
+	ng g s one-to-nth/five/five-data --spec false -m one-to-nth/one-to-nth.module
+	ng g class one-to-nth/five/five-model
+
+	ng g c one-to-nth/five/five-write --flat --spec false
+	ng g c one-to-nth/five/five-grid --flat --spec false
+	ng g c one-to-nth/five/five-detail --flat --spec false
+	ng g c one-to-nth/five/five-modify --flat --spec false
+		ng g c one-to-nth/five/five-edit --flat --spec false
+	ng g c one-to-nth/five/five-delete --flat --spec false
+	ng g interface one-to-nth/five/index
+	ng g guard one-to-nth/five/five-detail --spec false -m one-to-nth/one-to-nth.module
+

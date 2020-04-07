@@ -22,5 +22,18 @@ namespace DotNetNote
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        //public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        //    WebHost.CreateDefaultBuilder(args)
+        //        .ConfigureAppConfiguration(ConfigConfiguration)
+        //            .UseStartup<Startup>();
+
+        //public static void ConfigConfiguration(
+        //    WebHostBuilderContext ctx, IConfigurationBuilder config)
+        //{
+        //    config.SetBasePath(Directory.GetCurrentDirectory())
+        //    .AddJsonFile($"Settings\\DotNetNoteSettings.json", optional: true)
+        //    .AddEnvironmentVariables();
+        //}
     }
 }

@@ -1,0 +1,5 @@
+﻿패키지 관리자(NUGET, NPM, LIBMAN)와 상관없이 수동으로 관리되는 라이브러리들
+
+jQuery
+Bootstrap
+...
