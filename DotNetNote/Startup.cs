@@ -263,18 +263,18 @@ namespace DotNetNote
             //        Configuration.GetConnectionString("DefaultConnection")));
             //// </DashboardContext:새로운 DbContext 추가>
 
-            //// ============================================================================== // 
-            //// 새로운 DbContext 추가
-            //services.AddEntityFrameworkSqlServer().AddDbContext<DotNetNoteContext>(options =>
-            //    options.UseSqlServer(
-            //        Configuration.GetConnectionString("DefaultConnection")));
-            //// ============================================================================== // 
-            //// ============================================================================== // 
-            //// 새로운 DbContext 추가
-            //services.AddEntityFrameworkSqlServer().AddDbContext<TechContext>(options =>
-            //    options.UseSqlServer(
-            //        Configuration.GetConnectionString("DefaultConnection")));
-            //// ============================================================================== // 
+            // ============================================================================== // 
+            // 새로운 DbContext 추가
+            services.AddEntityFrameworkSqlServer().AddDbContext<DotNetNoteContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+            // ============================================================================== // 
+            // ============================================================================== // 
+            // 새로운 DbContext 추가
+            services.AddEntityFrameworkSqlServer().AddDbContext<TechContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+            // ============================================================================== // 
 
             //// 의존성 주입
             //services.AddTransient<ITwelveRepository, TwelveRepository>();
@@ -434,9 +434,9 @@ namespace DotNetNote
             {
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                //app.UseHsts();
             }
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
