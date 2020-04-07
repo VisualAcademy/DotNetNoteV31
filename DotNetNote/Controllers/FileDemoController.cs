@@ -10,9 +10,9 @@ namespace DotNetNote.Controllers
 {
     public class FileDemoController : Controller
     {
-        private IHostingEnvironment _environment;
+        private IWebHostEnvironment _environment;
 
-        public FileDemoController(IHostingEnvironment environment)
+        public FileDemoController(IWebHostEnvironment environment)
         {
             _environment = environment;
         }

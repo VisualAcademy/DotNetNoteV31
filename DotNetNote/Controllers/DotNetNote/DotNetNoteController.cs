@@ -21,14 +21,14 @@ namespace DotNetNote.Controllers
     public class DotNetNoteController : Controller
     {
         //[DNN] 의존성 주입
-        private IHostingEnvironment _environment; // 환경 변수
+        private IWebHostEnvironment _environment; // 환경 변수
         private readonly INoteRepository _repository; // 게시판 리파지터리
         private readonly INoteCommentRepository _commentRepository; // 댓글 리파지터리
         private readonly ILogger<DotNetNoteController> _logger; // 기본 제공 로깅
         private readonly DotNetNoteContext _context; // 컨텍스트 클래스
 
         public DotNetNoteController(
-            IHostingEnvironment environment, // IWebHostEnvironment로 변경할 것
+            IWebHostEnvironment environment, // IWebHostEnvironment로 변경할 것
             INoteRepository repository,
             INoteCommentRepository commentRepository,
             ILogger<DotNetNoteController> logger,

@@ -11,9 +11,9 @@ namespace DotNetNote.Controllers
 {
     public class CkEditorDemoController : Controller
     {
-        private IHostingEnvironment _environment;
+        private IWebHostEnvironment _environment;
 
-        public CkEditorDemoController(IHostingEnvironment environment)
+        public CkEditorDemoController(IWebHostEnvironment environment)
         {
             _environment = environment;
         }

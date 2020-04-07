@@ -11,9 +11,9 @@ namespace DotNetNoteCom.Controllers
     [Route("api/[controller]")]
     public class WebApiFileUploadController : Controller
     {
-        private readonly IHostingEnvironment _environment;
+        private readonly IWebHostEnvironment _environment;
 
-        public WebApiFileUploadController(IHostingEnvironment environment)
+        public WebApiFileUploadController(IWebHostEnvironment environment)
         {
             _environment = environment;
         }

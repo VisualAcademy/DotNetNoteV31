@@ -11,9 +11,9 @@ namespace DotNetNoteCom.Controllers
     [Route("api/[controller]")]
     public class FileUploadTestFinalController : Controller
     {
-        private readonly IHostingEnvironment _environment;
+        private readonly IWebHostEnvironment _environment;
 
-        public FileUploadTestFinalController(IHostingEnvironment environment)
+        public FileUploadTestFinalController(IWebHostEnvironment environment)
         {
             _environment = environment;
         }
