@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\js__\site.js" />
     <None Include="wwwroot\lib__\bootstrap-3-datepicker\.github\ISSUE_TEMPLATE.md" />
     <None Include="wwwroot\lib__\bootstrap-3-datepicker\.github\PULL_REQUEST_TEMPLATE.md" />
     <None Include="wwwroot\lib__\bootstrap-3-timepicker\.grunt\grunt-contrib-jasmine\jasmine-helper.js" />
