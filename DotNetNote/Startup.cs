@@ -410,8 +410,10 @@ namespace DotNetNote
             //services.AddTransient<ICompanyRepository, CompanyRepositoryEntityFramework>();
 
             // <Notifications>
+            // ----------------------------------------------------------------------------------------------------------------------------- // 
             // 종속성 해결: IMyNotificationRepository의 인스턴스를 MyNotificationRepository로 생성
             services.AddSingleton<IMyNotificationRepository>(new MyNotificationRepository(Configuration["ConnectionString"]));
+            // ----------------------------------------------------------------------------------------------------------------------------- // 
             // </Notifications>
 
             services.AddTransient<IUrlRepository, UrlRepository>();
