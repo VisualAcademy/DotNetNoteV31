@@ -28,7 +28,8 @@ Create Table dbo.Notes
     ParentNum       Int Default 0,                              -- 부모글번호
 
     CommentCount    Int Default 0,                              -- 댓글수
-    Category        NVarChar(10) Default('Free') Null,          -- 카테고리(확장...)
+    Category        NVarChar(20) Default('Free') Null,          -- 카테고리(확장...) => '공지', '자유', '자료', '사진', ...
+
     -- 추가: 필요한 항목 추가
     Num             Int Null,                                   -- 번호(확장...)
     UserId          Int Null,                                   -- (확장...) 사용자 테이블 Id
