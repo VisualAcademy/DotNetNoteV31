@@ -92,12 +92,14 @@ namespace DotNetNote
 
 
             //#region ASP.NET Core 쿠키 인증: ConfigureServices()
-            //////[1] ASP.NET Core 쿠키 인증: 단순형
-            ////services.AddAuthentication("Cookies").AddCookie(options =>
-            ////{
-            ////    options.LoginPath = "/User/Login/";
-            ////    options.AccessDeniedPath = "/User/Forbidden/";
-            ////});
+            ////[1] ASP.NET Core 쿠키 인증: 단순형
+            //services.AddAuthentication("Cookies").AddCookie();
+            services.AddAuthentication("Cookies")
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/User/Login/";
+                    options.AccessDeniedPath = "/User/Forbidden/";
+                });
 
             //// _httpContextAccessor.IsAuthenticated 등 사용 
             //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -442,6 +444,15 @@ namespace DotNetNote
             app.UseRouting();
 
             app.UseAuthentication();
+            #region ASP.NET Core 2.X 쿠키 인증: Configure()
+            //// ASP.NET Core 2.X에서 쿠키 인증
+            //app.UseAuthentication(); // 인증 미들웨어를 사용하겠다고 지정 
+            ////app.UseCookiePolicy();
+            //var cookiePolicyOptions = new CookiePolicyOptions() { MinimumSameSitePolicy = SameSiteMode.Strict };
+            //app.UseCookiePolicy(cookiePolicyOptions);
+            #endregion
+
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -550,17 +561,8 @@ namespace DotNetNote
 
             //app.UseHttpsRedirection();
             //app.UseStatusCodePages();
-            //app.UseStaticFiles();
-            //app.UseSpaStaticFiles();
 
 
-            //#region ASP.NET Core 2.X 쿠키 인증: Configure()
-            //// ASP.NET Core 2.X에서 쿠키 인증
-            //app.UseAuthentication(); // 인증 미들웨어를 사용하겠다고 지정 
-            ////app.UseCookiePolicy();
-            //var cookiePolicyOptions = new CookiePolicyOptions() { MinimumSameSitePolicy = SameSiteMode.Strict };
-            //app.UseCookiePolicy(cookiePolicyOptions);
-            //#endregion
 
 
             //// 31.8.4. Serilog를 사용하여 로그 파일 기록하기 

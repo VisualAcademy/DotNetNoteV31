@@ -85,6 +85,7 @@
     <Folder Include="dbo\Tables\Fives" />
     <Folder Include="_" />
     <Folder Include="_\Notifications" />
+    <Folder Include="Users" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Buyers.sql" />
@@ -110,7 +111,6 @@
     <Build Include="dbo\Stored Procedures\AddPermission.sql" />
     <Build Include="dbo\Stored Procedures\Memos_Procedures.sql" />
     <Build Include="dbo\Stored Procedures\Signs_Procedures.sql" />
-    <Build Include="dbo\Stored Procedures\Users_Procedures.sql" />
     <Build Include="dbo\Tables\Blog\Blogs.sql" />
     <Build Include="dbo\Tables\Blog\Comments.sql" />
     <Build Include="dbo\Tables\Blog\Posts.sql" />
@@ -150,10 +150,11 @@
     <Build Include="dbo\Tables\Threes.sql" />
     <Build Include="dbo\Tables\Twos.sql" />
     <Build Include="dbo\Tables\UserLogs.sql" />
-    <Build Include="dbo\Tables\Users.sql" />
     <Build Include="dbo\Tables\Urls.sql" />
     <Build Include="dbo\Tables\Fives\Fives.sql" />
     <Build Include="_\Notifications\MyNotifications.sql" />
+    <Build Include="Users\Users.sql" />
+    <Build Include="Users\Users_Procedures.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DotNetNote.Database.publish.xml" />
