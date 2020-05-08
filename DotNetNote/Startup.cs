@@ -191,22 +191,22 @@ namespace DotNetNote
             //services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             //services.AddDefaultIdentity<IdentityUser>().AddDefaultUI(UIFramework.Bootstrap4).AddEntityFrameworkStores<ApplicationDbContext>();
 
-            //// Identity 옵션 설정
-            //services.Configure<IdentityOptions>(options =>
-            //{
-            //    // 암호 설정
-            //    options.Password.RequiredLength = 8;
-            //    options.Password.RequireDigit = true;
-            //    options.Password.RequireLowercase = true;
 
-            //    // 잠금 설정
-            //    options.Lockout.MaxFailedAccessAttempts = 5;
-            //    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+            // Identity 옵션 설정
+            services.Configure<IdentityOptions>(options =>
+            {
+                // 암호 설정
+                options.Password.RequiredLength = 8;
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
 
-            //    // 사용자 설정
-            //    options.User.RequireUniqueEmail = true;
-            //});
+                // 잠금 설정
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
 
+                // 사용자 설정
+                options.User.RequireUniqueEmail = true;
+            });
 
 
             //// ASP.NET Core 2.2 버전을 기준 버전으로 실행 
