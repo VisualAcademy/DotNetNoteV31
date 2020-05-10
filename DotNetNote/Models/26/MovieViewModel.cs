@@ -9,4 +9,3 @@ namespace DotNetNote.Models
         public DateTime CreationDate { get; set; }
     }
 }
-
