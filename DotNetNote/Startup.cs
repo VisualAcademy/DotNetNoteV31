@@ -76,18 +76,20 @@ namespace DotNetNote
 
 
 
-            ////[DNN] TempData[] 개체 사용
-            //// In-Memory 캐싱 
-            //services.AddMemoryCache();
+            #region TempData
+            //[DNN] TempData[] 개체 사용
+            // In-Memory 캐싱 
+            services.AddMemoryCache();
 
-            ////[!] 세션 개체 사용: Microsoft.AspNetCore.Session.dll
-            ////services.AddSession(); 
-            //// Session 개체 사용시 옵션 부여 
-            //services.AddSession(options =>
-            //{
-            //    // 세션 유지 시간
-            //    options.IdleTimeout = TimeSpan.FromMinutes(30);
-            //});
+            //[!] 세션 개체 사용: Microsoft.AspNetCore.Session.dll
+            //services.AddSession(); 
+            // Session 개체 사용시 옵션 부여 
+            services.AddSession(options =>
+            {
+                // 세션 유지 시간
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            }); 
+            #endregion
 
 
 
@@ -500,8 +502,12 @@ namespace DotNetNote
             //todo.SaveChanges();
             //// </TodoComponent>
 
-            ////[DNN] TempData 개체 사용
-            //app.UseSession(); //[!] 세션 개체 사용, 반드시 UseMvc() 이전에 호출되어야 함
+
+            #region TempData
+            //[DNN] TempData 개체 사용
+            app.UseSession(); //[!] 세션 개체 사용, 반드시 UseMvc() 이전에 호출되어야 함 
+            #endregion
+
 
             //// 미들웨어 추가
 
