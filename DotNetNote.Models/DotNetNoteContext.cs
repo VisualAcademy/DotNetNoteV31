@@ -2,7 +2,7 @@
 //Install-Package Microsoft.EntityFrameworkCore.SqlServer
 //Install-Package Microsoft.EntityFrameworkCore.Tools
 //Install-Package System.Configuration.ConfigurationManager
-//Install-Package System.Data.SqlClient
+//Install-Package Microsoft.Data.SqlClient
 
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;

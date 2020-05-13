@@ -7,6 +7,7 @@ using DotNetNote.Models.Exams;
 using DotNetNote.Models.Notifications;
 using DotNetNote.Models.RecruitManager;
 using DotNetNote.Services;
+using DotNetNote.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -39,9 +40,8 @@ namespace DotNetNote
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-
-            ////[!] Configuration: JSON 파일의 데이터를 POCO 클래스에 주입
-            //services.Configure<DotNetNoteSettings>(Configuration.GetSection("DotNetNoteSettings"));
+            //[!] Configuration: JSON 파일의 데이터를 POCO 클래스에 주입
+            services.Configure<DotNetNoteSettings>(Configuration.GetSection("DotNetNoteSettings"));
 
             ////[!] 디렉터리 브라우징 기능 제공(옵션)
             //services.AddDirectoryBrowser();
