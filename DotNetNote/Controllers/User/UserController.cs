@@ -63,7 +63,7 @@ namespace DotNetNote.Controllers
             else
             {
                 //_repository.AddUser(model.UserId, model.Password);
-                _repository.AddUser(model.UserId, Common.CryptorEngine.EncryptPassword(model.Password)
+                _repository.AddUser(model.UserId, (new Dul.Security.CryptorEngine()).EncryptPassword(model.Password)
                 );
                 return RedirectToAction("Index");
             }
@@ -99,7 +99,7 @@ namespace DotNetNote.Controllers
                 }
 
                 //if (_repository.IsCorrectUser(model.UserId, model.Password))
-                if (_repository.IsCorrectUser(model.UserId, Common.CryptorEngine.EncryptPassword(model.Password)))
+                if (_repository.IsCorrectUser(model.UserId, (new Dul.Security.CryptorEngine()).EncryptPassword(model.Password)))
                 {
                     //[!] 인증 부여: 인증된 사용자의 주요 정보(Name, Role, ...)를 기록
                     var claims = new List<Claim>()
@@ -116,7 +116,7 @@ namespace DotNetNote.Controllers
                         new Claim(ClaimTypes.Role, "Users") // 추가 정보 기록
                     };
 
-                    //var ci = new ClaimsIdentity(claims, Common.CryptorEngine.EncryptPassword(model.Password));
+                    //var ci = new ClaimsIdentity(claims, (new Dul.Security.CryptorEngine()).EncryptPassword(model.Password));
                     var ci = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                     //[1] 로그인 처리: Authorize 특성 사용해서 로그인 체크 가능 

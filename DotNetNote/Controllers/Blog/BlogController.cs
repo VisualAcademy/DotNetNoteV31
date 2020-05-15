@@ -230,7 +230,7 @@ namespace DotNetNote.Controllers
             note.FileName = fileName;
             note.FileSize = fileSize;
             note.Password =
-                Common.CryptorEngine.EncryptPassword(model.Password);
+                (new Dul.Security.CryptorEngine()).EncryptPassword(model.Password);
             note.PostIp =
                 HttpContext.Connection.RemoteIpAddress.ToString(); // IP 주소
             note.Encoding = model.Encoding;
@@ -355,7 +355,7 @@ namespace DotNetNote.Controllers
         {
             //if (_repository.DeleteNote(id, Password) > 0)
             if (_repository.DeleteNote(id,
-                Common.CryptorEngine.EncryptPassword(Password)) > 0)
+                (new Dul.Security.CryptorEngine()).EncryptPassword(Password)) > 0)
             {
                 TempData["Message"] = "데이터가 삭제되었습니다.";
 
@@ -475,7 +475,7 @@ namespace DotNetNote.Controllers
             note.FileName = fileName;
             note.FileSize = fileSize;
             note.Password =
-                Common.CryptorEngine.EncryptPassword(model.Password);
+                (new Dul.Security.CryptorEngine()).EncryptPassword(model.Password);
             note.ModifyIp =
                 HttpContext.Connection.RemoteIpAddress.ToString(); // IP 주소
             note.Encoding = model.Encoding;
@@ -565,7 +565,7 @@ namespace DotNetNote.Controllers
             note.FileName = fileName;
             note.FileSize = fileSize;
             note.Password =
-                Common.CryptorEngine.EncryptPassword(model.Password);
+                (new Dul.Security.CryptorEngine()).EncryptPassword(model.Password);
             note.PostIp = HttpContext.Connection.RemoteIpAddress.ToString();
             note.Encoding = model.Encoding;
 
@@ -640,7 +640,7 @@ namespace DotNetNote.Controllers
             comment.BoardId = BoardId;
             comment.Name = txtName;
             comment.Password =
-                Common.CryptorEngine.EncryptPassword(txtPassword);
+                (new Dul.Security.CryptorEngine()).EncryptPassword(txtPassword);
             comment.Opinion = txtOpinion;
 
             // 댓글 데이터 저장
@@ -669,7 +669,7 @@ namespace DotNetNote.Controllers
         public IActionResult CommentDelete(
             string BoardId, string Id, string txtPassword)
         {
-            txtPassword = Common.CryptorEngine.EncryptPassword(txtPassword);
+            txtPassword = (new Dul.Security.CryptorEngine()).EncryptPassword(txtPassword);
             // 현재 삭제하려는 댓글의 암호가 맞으면, 삭제 진행
             if (_commentRepository.GetCountBy(Convert.ToInt32(BoardId)
                 , Convert.ToInt32(Id), txtPassword) > 0)
