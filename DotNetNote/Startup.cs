@@ -158,16 +158,16 @@ namespace DotNetNote
 
 
 
-            ////[User][9] Policy 설정
-            //services.AddAuthorization(options =>
-            //{
-            //    // Users Role이 있으면, Users Policy 부여
-            //    options.AddPolicy("Users", policy => policy.RequireRole("Users"));
+            //[User][9] Policy 설정
+            services.AddAuthorization(options =>
+            {
+                // Users Role이 있으면, Users Policy 부여
+                options.AddPolicy("Users", policy => policy.RequireRole("Users"));
 
-            //    // Users Role이 있고 UserId가 DotNetNoteSettings:SiteAdmin에 지정된 값(예를 들어 "Admin")이면 "Administrators" 부여
-            //    // "UserId" - 대소문자 구분
-            //    options.AddPolicy("Administrators", policy => policy.RequireRole("Users").RequireClaim("UserId", Configuration.GetSection("DotNetNoteSettings").GetSection("SiteAdmin").Value));
-            //});
+                // Users Role이 있고 UserId가 DotNetNoteSettings:SiteAdmin에 지정된 값(예를 들어 "Admin")이면 "Administrators" 부여
+                // "UserId" - 대소문자 구분
+                options.AddPolicy("Administrators", policy => policy.RequireRole("Users").RequireClaim("UserId", Configuration.GetSection("DotNetNoteSettings").GetSection("SiteAdmin").Value));
+            });
 
 
 
