@@ -336,6 +336,8 @@ namespace DotNetNote
             // LoginFailedManager
             services.AddTransient<ILoginFailedRepository, LoginFailedRepository>();
             services.AddTransient<ILoginFailedManager, LoginFailedManager>();
+            // 사용자 정보 보기 전용 컴포넌트
+            services.AddTransient<IUserModelRepository, UserModelRepository>();
 
 
             //[CommunityCamp] 모듈 서비스 등록
@@ -394,9 +396,6 @@ namespace DotNetNote
             //services.AddTransient<IPointRepository, PointRepository>(); // DB 사용
             services.AddTransient<IPointRepository, PointRepositoryInMemory>(); // 인-메모리 사용
             services.AddTransient<IPointLogRepository, PointLogRepository>();
-
-            // 사용자 정보 보기 전용 컴포넌트
-            services.AddTransient<IUserModelRepository, UserModelRepository>();
 
             // DotNetSale
             services.AddTransient<ICategoryRepository, CategoryRepositoryInMemory>();
